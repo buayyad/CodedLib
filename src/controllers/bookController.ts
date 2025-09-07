@@ -11,6 +11,7 @@ export const createBook = async (
       title: req.body.title,
       author: req.body.author,
       categories: req.body.categories || [],
+      coverImage: req.file ? req.file.filename : undefined,
     });
     res.status(201).json(book);
   } catch (error) {
